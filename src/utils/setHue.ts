@@ -1,4 +1,5 @@
 import { getRandomInt } from './getRandom';
+// Hue Picker based on color selected on dropdown
 export const hue = (color:string)=>{
     if(color === 'All Colors')return getRandomInt(360,0)
     if(color === 'Red')return getRandomInt(15,0)

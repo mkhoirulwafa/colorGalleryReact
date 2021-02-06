@@ -9,6 +9,7 @@ export const App: React.FC = ({}) => {
   const [color, setColor] = useState<string>('All Colors')
   const [light, setLight] = useState<string>('All')
 
+  // colors list for dropdown
   const colors = [
     "All Colors","Red", "Vermilion", "Orange", "Golden Yellow", "Lemon Yellow", "Yellowish Green",
     "Chartreuse","Leaf Green","Green","Cobalt Green","Emerald Green","Turquoise Green",
@@ -32,6 +33,7 @@ export const App: React.FC = ({}) => {
       <>
         <div className='appHeader'>
           <h1 className='title'>Colour Gallery</h1>
+          {/* Dropdown for Color*/}
           <label>
             Pick your favorite Color:
             <select value={color} onChange={e=>handleChangeColor(e)}>
@@ -43,6 +45,7 @@ export const App: React.FC = ({}) => {
             </select>
           </label>
           <div style={{width: 20}}/>
+          {/* Radio Button for Saturation */}
           <label>
             Pick your favorite Saturation:
               <div onChange={e=>handleChangeLight(e)}>  
@@ -53,6 +56,7 @@ export const App: React.FC = ({}) => {
           </label>
           <div className='cardContainer'>  
             {
+              // check selected value of color state
               color !== 'All Colors' ? (
               <>
                 <ColorCard hue={hue(color)} lightness={lightness(light)} />
